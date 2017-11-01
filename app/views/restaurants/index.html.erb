@@ -1,0 +1,42 @@
+<h1 class="text-center jumbotron">Fancy shmancy cards</h1 >
+
+<div id="sidebar">
+
+<a href="/restaurants/new"> <i class="fa fa-file-text" aria-hidden="true"></i> </a>
+
+
+</div>
+<div id="page-content">
+  <div class="container">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+    <% @test =  ['berlin', 'shanghai', 'rio'].sample%>
+
+  <div class="col-xs-12 col-md-4">
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('assets/<%= @test %>.jpg');">
+      <h3><%= restaurant.name %></h3>
+      <p>
+       <%= restaurant.address %>
+     </p>
+     <p>
+       <%= restaurant.phone_number %>
+     </p>
+     <p>
+       <%= restaurant.category %>
+     </p>
+     <%= link_to "show restaurant", restaurant_path(restaurant),  class: "btn btn-primary" %>
+     <%= link_to "Give a review", new_restaurant_review_path(restaurant), class: "btn btn-primary" %>
+
+
+   </div>
+ </div>
+   <% end %>
+</div>
+</div>
+</div>
+
+
+
+
+
+
